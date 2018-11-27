@@ -1,0 +1,87 @@
+<template>
+  <div>
+    <section class="section has-background-light">
+      <div class="container">
+        <div class="columns is-multiline">
+          <div class="column is-8 is-offset-2">
+            <nuxt-link to="/symptom" class="has-text-primary">
+              <small>Symptom</small>
+            </nuxt-link>
+            <h1 class="title is-1">{{ symptom.data.symptomName }}</h1>
+            <p class="subtitle">{{ symptom.data.symptomKurzInfo }}</p>
+          </div>
+          <div class="column is-8 is-offset-2">
+            <h2 class="title is-4">Diese Wirkstoffe helfen:</h2>
+            <BaseWirkstoffShort
+              v-for="item in symptom.wirkstoffe"
+              :key="item.wirkstoff.id"
+              :image="item.wirkstoff.wirkstoffIcon"
+              :title="item.wirkstoff.wirkstoffName"
+              :subtitle="item.wirkstoff.wirkstoffTyp.wirkstoffTypName"
+              :info="item.content"
+              :wertung="item.wirkstoff.wirkstoffWertung"
+              :id="item.wirkstoff.id"
+              :wirkstofftyp="item.wirkstoff.wirkstoffTyp.wirkstofftypName"
+              :wirkungsgrad="item.wirkstoff.wirkungsgrad"
+            />
+          </div>
+          <div class="column is-8 is-offset-2">
+            <div class="content">
+              <div v-for="item in symptom.blocks" :key="item.id" class="has-text-dark block">
+                <figure v-if="item.type == 'image'" class="figure column is-10 is-offset-1">
+                  <img :src="item.src">
+                  <figcaption>{{ item.caption }}</figcaption>
+                </figure>
+                <div
+                  v-else-if="item.type == 'text'"
+                  class="column"
+                  v-html="$md.render(item.content)"
+                />
+              </div>
+              <aside class="content">
+                <b-notification class="is-dark" :active.sync="isHinweisActive">
+                  <i>
+                    Wichtiger Hinweis:
+                    Dieser Artikel enthält nur allgemeine Hinweise und sollte nicht zur Selbstdiagnose oder –behandlung verwendet werden. Er kann einen Arztbesuch nicht ersetzen. Die Beantwortung individueller Fragen durch unsere Experten ist leider nicht möglich.
+                  </i>
+                </b-notification>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</template>
+
+<script>
+import { fireDb } from '~/plugins/firebase.js'
+export default {
+  name: 'Symptom',
+  data() {
+    return {
+      isHinweisActive: true,
+      symptom: {},
+      amazon: {}
+    }
+  },
+  async asyncData({ app, params }) {
+    let symptom = await fireDb
+      .collection('symptom')
+      .doc(params.id)
+      .get()
+
+    return {
+      symptom: symptom.data()
+    }
+  }
+}
+</script>
+
+<style>
+.title-left {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+</style>
