@@ -19,13 +19,15 @@
           </a>
         </div>
       </div>
-
+      <span>Wirkungsgrad bei {{ symptom }}</span>
       <progress
         :value="wirkungsgrad"
         max-attributes-per-line
         class="progress is-primary"
         max="10"
       >{{ wirkungsgrad }}%</progress>
+      <hr>
+      <small>Einnahme</small>
       <p>
         <b-icon icon="emoticon-happy"/>
         {{ einnahmeempfehlung }}
@@ -35,6 +37,7 @@
         <b-icon icon="emoticon-neutral"/>
         {{ sonicht }}
       </p>
+      <hr>
       <p class="has-text-grey">{{ info }}</p>
     </div>
   </article>
@@ -77,6 +80,10 @@ export default {
       type: String,
       default: null
     },
+    symptom: {
+      type: String,
+      default: null
+    },
     einnahmeempfehlung: {
       type: String,
       default: 'Täglich morgens 50mg'
@@ -91,4 +98,7 @@ export default {
 </script>
 
 <style>
+.is-bold {
+  font-weight: bold;
+}
 </style>

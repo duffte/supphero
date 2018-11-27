@@ -4,7 +4,7 @@
       <div class="container">
         <div class="columns">
           <div class="column">
-            Supp Hero
+            <img src="~/assets/supphero_b.svg">
           </div>
           <div class="column">
             <ul>
@@ -16,11 +16,18 @@
           </div>
           <div class="column">
             <ul>
-              <li><a href="">Hilfe</a></li>
-              <li><a href="">Status</a></li>
-              <li><a href="">Autoren</a></li>
-              <li><a href="">Blog</a></li>
-              <li><a href="">Karriere</a></li>
+              <li>
+                <a href>Hilfe</a>
+              </li>
+              <li>
+                <a href>Autoren</a>
+              </li>
+              <li>
+                <a href>Blog</a>
+              </li>
+              <li>
+                <a href>Karriere</a>
+              </li>
             </ul>
           </div>
         </div>
