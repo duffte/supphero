@@ -42,7 +42,7 @@
         <div class="columns">
           <div class="column is-8 is-offset-2">
             <div class="content">
-              <nuxt-link :to="'/autor/'+symptom.data.autor.id">
+              <nuxt-link to="/autoren/">
                 <div class="author media">
                   <figure class="media-left">
                     <p class="image is-48x48">
