@@ -42,17 +42,17 @@
         <div class="columns">
           <div class="column is-8 is-offset-2">
             <div class="content">
-              <nuxt-link :to="'/autor/'+symptom.data.author.id">
+              <nuxt-link :to="'/autor/'+symptom.data.autor.id">
                 <div class="author media">
                   <figure class="media-left">
                     <p class="image is-48x48">
-                      <img :src="symptom.data.author.authorImage" class="is-rounded authorImage">
+                      <img :src="symptom.data.autor.autorImage" class="is-rounded authorImage">
                     </p>
                   </figure>
                   <div class="media-content">
                     <div class="content">
                       <span class="author-top">Geschrieben von</span>
-                      <p class="author-name">{{ symptom.data.author.authorName }}</p>
+                      <p class="author-name">{{ symptom.data.autor.autorName }}</p>
                     </div>
                   </div>
                 </div>
