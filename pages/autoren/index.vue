@@ -34,7 +34,7 @@ export default {
       .get()
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {
-          symptomCollection.push(doc.data().data)
+          autorCollection.push(doc.data().data)
         })
       })
 
