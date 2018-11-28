@@ -1,10 +1,14 @@
 <template>
   <div>
-    <BaseHero title="Symptome" subtitle="inhalt"/>
+    <BaseHero
+      title="Autoren"
+      subtitle="Jedes Wort der Webseite stammt aus den Fingern dieser Damen und Herren."
+    />
     <section class="section">
       <div class="container">
         <div class="columns">
           <div class="column content">
+            <h2></h2>
             <ul>
               <li v-for="autor in autoren" :key="autor.id">
                 <span class="subtitle has-text-primary">{{ autor.autorName }}</span>
