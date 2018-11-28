@@ -22,7 +22,7 @@ import { fireDb } from '~/plugins/firebase.js'
 export default {
   head() {
     return {
-      title: this.description,
+      title: this.title,
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
         {
