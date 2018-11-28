@@ -17,17 +17,17 @@
           <p class="title is-4 newsTitle">
             <nuxt-link :to="singleLink">{{ title }}</nuxt-link>
           </p>
-          <nuxt-link :to="'/autor/'+author.id">
+          <nuxt-link to="/autoren/">
             <div class="author media">
               <figure class="media-left">
                 <p class="image is-48x48">
-                  <img :src="author.authorImage" class="is-rounded authorImage">
+                  <img :src="author.autorImage" class="is-rounded authorImage">
                 </p>
               </figure>
               <div class="media-content">
                 <div class="content">
                   <span class="author-top">Geschrieben von</span>
-                  <p class="author-name">{{ author.authorName }}</p>
+                  <p class="author-name">{{ author.autorName }}</p>
                 </div>
               </div>
             </div>
@@ -124,6 +124,9 @@ export default {
   font-size: 1.2em;
   font-weight: 600;
   color: #363636;
+}
+.authorImage {
+  margin: 0 !important;
 }
 .BaseNewsCard .newsTitle {
   min-height: 80px;

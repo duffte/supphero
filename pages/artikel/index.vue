@@ -3,16 +3,9 @@
     <BaseHero title="Artikel" subtitle="Inhalt"/>
     <section class="section">
       <div class="container">
-        <div class="columns">
-          <div class="column content">
-            <ul>
-              <li v-for="item in artikel" :key="artikel.id">
-                <nuxt-link :to="'/artikel/'+artikel.id">
-                  <span class="subtitle has-text-primary">{{ artikel.artikelName }}</span>
-                </nuxt-link>
-              </li>
-            </ul>
-          </div>
+        <div class="columns is-multiline">
+           <BaseArticle v-for="item in artikel" :key="item.id" columnSize="is-4" :title="item.artikelName" :date="item.artikelDate" :author="item.autor"/>
+
         </div>
       </div>
     </section>
@@ -48,9 +41,4 @@ export default {
 </script>
 
 <style>
-.title-left {
-  display: flex;
-  align-items: flex-end;
-  flex-direction: column;
-}
 </style>

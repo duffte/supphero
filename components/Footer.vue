@@ -8,25 +8,33 @@
           </div>
           <div class="column">
             <ul>
-              <li>Info</li>
-              <li>Werbung</li>
-              <li>Datenschutz</li>
-              <li>Impressum</li>
+              <li>
+                <nuxt-link to="../info">Info</nuxt-link>
+              </li>
+              <li>
+                <nuxt-link to="../werbung">Werbung</nuxt-link>
+              </li>
+              <li>
+                <nuxt-link to="../datenschutz">Datenschutz</nuxt-link>
+              </li>
+              <li>
+                <nuxt-link to="../impressum">Impressum</nuxt-link>
+              </li>
             </ul>
           </div>
           <div class="column">
             <ul>
               <li>
-                <a href>Hilfe</a>
+                <nuxt-link to="../hilfe">Hilfe</nuxt-link>
               </li>
               <li>
-                <a href>Autoren</a>
+                <nuxt-link to="../autoren">Autoren</nuxt-link>
               </li>
               <li>
-                <a href>Blog</a>
+                <nuxt-link to="../artikel">Blog</nuxt-link>
               </li>
               <li>
-                <a href>Karriere</a>
+                <nuxt-link to="../jobs">Jobs</nuxt-link>
               </li>
             </ul>
           </div>

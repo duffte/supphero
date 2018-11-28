@@ -81,9 +81,4 @@ export default {
 </script>
 
 <style>
-.title-left {
-  display: flex;
-  align-items: flex-end;
-  flex-direction: column;
-}
 </style>

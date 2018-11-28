@@ -6,15 +6,22 @@
     />
     <section class="section">
       <div class="container">
-        <div class="columns">
-          <div class="column content">
-            <h2></h2>
-            <ul>
-              <li v-for="autor in autoren" :key="autor.id">
-                <span class="subtitle has-text-primary">{{ autor.autorName }}</span>
-              </li>
-            </ul>
-          </div>
+        <div class="columns" v-for="autor in autoren" :key="autor.id">
+        <div class="column is-8 is-offset-2">
+                    <div class="author media">
+              <figure class="media-left">
+                  <p class="image is-128x128">
+                  <img :src="autor.autorImage" class="is-rounded authorImage">
+                  </p>
+              </figure>
+              <div class="media-content">
+                  <div class="content">
+                  <h2>{{ autor.autorName }}</h2>
+                  <p class="subtitle">{{ autor.autorKurzInfo}}</p>
+                  </div>
+              </div>
+          </div> 
+           </div> 
         </div>
       </div>
     </section>
@@ -83,5 +90,8 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.subtitle {
+  font-family: Georgia, 'Times New Roman', Times, serif !important;
+}
 </style>

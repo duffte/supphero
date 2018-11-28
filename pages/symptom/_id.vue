@@ -85,7 +85,7 @@
     <section class="section has-background-primary">
       <div class="container">
         <div class="columns">
-          <BaseArticle v-for="item in artikel" :key="item.id" :title="item.artikelName"/>
+          <BaseArticle v-for="item in artikel" :key="item.id" :author="item.autor" :image="item.artikelImage" :title="item.artikelName" :singleLink="'../artikel/'+item.id"/>
         </div>
       </div>
     </section>
@@ -100,18 +100,31 @@ export default {
     return {
       isHinweisActive: true,
       symptom: {},
-      amazon: {},
       artikel: [{ id: 1 }, { id: 2 }, { id: 3 }]
     }
   },
   async asyncData({ app, params }) {
+    let artikelCollection = []
+
+    await fireDb
+      .collection('artikel')
+      .orderBy('data.artikelDate', 'desc')
+      .limit(3)
+      .get()
+      .then(querySnapshot => {
+        querySnapshot.forEach(doc => {
+          artikelCollection.push(doc.data().data)
+        })
+      })
+
     let symptom = await fireDb
       .collection('symptom')
       .doc(params.id)
       .get()
 
     return {
-      symptom: symptom.data()
+      symptom: symptom.data(),
+      artikel: artikelCollection
     }
   }
 }
