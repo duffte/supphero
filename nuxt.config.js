@@ -1,12 +1,48 @@
 const pkg = require('./package')
 
 module.exports = {
-  mode: 'spa',
+  mode: 'universal',
 
   /*
   ** Headers of the page
   */
   head: {
+    meta: [
+      // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Supphero zeigt auf, welche Supplemente bei welchem Symptom hilfreich sind.'
+      },
+      //facebook
+      { hid: 'ogtitle', property: 'og:title', content: 'Supphero zeigt auf, welche Supplemente bei welchem Symptom hilfreich sind.' },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: 'Supphero zeigt auf, welche Supplemente bei welchem Symptom hilfreich sind.'
+      },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:image', property: 'og:image', content: 'asd.jpg' },
+      //twitter
+      { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
+      { hid: 'twitter:site', name: 'twitter:site', content: '@supphero' },
+      { hid: 'twitter:title', name: 'twitter:title', content: 'Supphero' },
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content: 'Supphero zeigt auf, welche Supplemente bei welchem Symptom hilfreich sind.'
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: 'asd.jpg'
+      },
+      {
+        hid: 'twitter:image:alt',
+        name: 'twitter:image:alt',
+        content: 'Supphero'
+      }
+    ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
