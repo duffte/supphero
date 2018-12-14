@@ -1,3 +1,4 @@
+import { fireDb } from './plugins/firebase.js'
 const pkg = require('./package')
 
 module.exports = {
@@ -80,6 +81,30 @@ module.exports = {
   /*
   ** Build configuration
   */
+
+  generate: {
+    routes: async () => {
+      let routes = []
+      //symptome
+      const symptom = fireDb.collection('symptom')
+      const symptomCollection = await symptom.get()
+      for (const doc of symptomCollection.docs) {
+        routes.push(`/symptom/${doc.data().data.id}`)
+      }
+      const wirkstoff = fireDb.collection('wirkstoff')
+      const wirkstoffCollection = await wirkstoff.get()
+      for (const doc of wirkstoffCollection.docs) {
+        routes.push(`/wirkstoff/${doc.data().data.id}`)
+      }
+      const artikel = fireDb.collection('artikel')
+      const artikelCollection = await artikel.get()
+      for (const doc of artikelCollection.docs) {
+        routes.push(`/artikel/${doc.data().data.id}`)
+      }
+      return routes
+    }
+  },
+
   build: {
     /*
     ** You can extend webpack config here

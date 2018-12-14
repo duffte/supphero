@@ -16,5 +16,6 @@ if (!firebase.apps.length) {
 }
 const fireDb = firebase.firestore()
 const storage = firebase.storage()
+const app = firebase
 
-export { storage, fireDb }
+export { storage, fireDb, app }

@@ -1,5 +1,8 @@
 <template>
   <article class="box">
+    <div class=" has-background-info">
+      Essentiell
+    </div>
     <div class="content">
       <div class="columns" style="margin-bottom:0">
         <div class="column">

@@ -24,13 +24,13 @@
                     <div class="author media">
                         <figure class="media-left">
                             <p class="image is-48x48">
-                            <img :src="data.data.autor.autorImage" class="is-rounded authorImage">
+                            <img :src="data.data.artikelAutor.autorImage" class="is-rounded authorImage">
                             </p>
                         </figure>
                         <div class="media-content">
                             <div class="content">
                             <span class="author-top">Geschrieben von</span>
-                            <p class="author-name">{{ data.data.autor.autorName }}</p>
+                            <p class="author-name">{{ data.data.artikelAutor.autorName }}</p>
                             </div>
                         </div>
                     </div>
