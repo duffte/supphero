@@ -85,7 +85,7 @@
     <section class="section has-background-primary">
       <div class="container">
         <div class="columns">
-          <BaseArticle v-for="item in artikel" :key="item.id" :author="item.autor" :image="item.artikelImage" :title="item.artikelName" :singleLink="'/artikel/'+item.id"/>
+          <BaseArticle v-for="item in artikel" :key="item.id" :author="item.autor" :image="item.artikelImage" :title="item.artikelName" :singleLink="'../../artikel/'+item.id"/>
         </div>
       </div>
     </section>
