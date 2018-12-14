@@ -81,7 +81,7 @@
           </div>
         </h2>
         <div class="columns">
-            <BaseArticle v-for="item in related" :key="item.id" columnSize="is-4" :title="item.artikelName" :date="item.artikelDate" :author="item.autor"/>
+            <BaseArticle v-for="item in related" :key="item.id" :singleLink="'/artikel/'+item.id" columnSize="is-4" :title="item.artikelName" :date="item.artikelDate" :author="item.autor"/>
         </div>
       </div>
     </section>

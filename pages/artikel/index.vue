@@ -4,7 +4,7 @@
     <section class="section">
       <div class="container">
         <div class="columns is-multiline">
-           <BaseArticle v-for="item in artikel" :key="item.id" :singleLink="'/artikel/'+item.id" columnSize="is-4" :title="item.artikelName" :date="item.artikelDate" :author="item.artikelAutor"/>
+            <BaseArticle v-for="item in artikel" :key="item.id" :author="item.autor" :image="item.artikelImage" :title="item.artikelName" :singleLink="'../artikel/'+item.id"/>
         </div>
       </div>
     </section>
