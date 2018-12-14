@@ -72,16 +72,9 @@
       :v-if="related" 
       class="section has-background-light">
       <div class="container">
-        <h2 v-if="data.data.artikelTags">Weitere Artikel zu dem hier besprochenen Thema:
-          <div class="tags">
-            <nuxt-link 
-            v-for="item in data.data.artikelTags" :key="item"            
-              :to="'/thema/'+item" 
-              class="tag is-info">{{ item }}</nuxt-link>
-          </div>
-        </h2>
+        
         <div class="columns">
-            <BaseArticle v-for="item in related" :key="item.id" :singleLink="'/artikel/'+item.id" columnSize="is-4" :title="item.artikelName" :date="item.artikelDate" :author="item.autor"/>
+             <BaseArticle v-for="item in artikel" :key="item.id" :author="item.autor" :image="item.artikelImage" :title="item.artikelName" :singleLink="'../artikel/'+item.id"/>
         </div>
       </div>
     </section>
