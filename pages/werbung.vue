@@ -60,7 +60,7 @@ export default {
       ]
     }
   },
-  name: 'Info',
+  name: 'Werbung',
   data() {
     return {
       title: 'Werben auf Supphero',

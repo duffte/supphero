@@ -60,7 +60,7 @@ export default {
       ]
     }
   },
-  name: 'Info',
+  name: 'Datenschutz',
   data() {
     return {
       title: 'Datenschutz',

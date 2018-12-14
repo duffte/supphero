@@ -101,12 +101,12 @@ export default {
       ]
     }
   },
-  name: 'Info',
+  name: 'Impressum',
   data() {
     return {
-      title: 'Supphero Info',
+      title: 'Impressum',
       image: 'https://supphero.netlify.com/_nuxt/img/368164f.svg',
-      description: 'Informationen über Supphero'
+      description: 'Impressum von Supphero'
     }
   }
 }
