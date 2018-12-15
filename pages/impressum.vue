@@ -7,8 +7,7 @@
     <section class="section">
       <div class="container">
         <div class="columns">
-            <div class="column is-8 is-offset-2" v-html="$md.render(content)">
-              
+            <div class="column is-8 is-offset-2" v-html="$md.render(content)">             
                 
             </div> 
         </div>
