@@ -33,9 +33,6 @@
               <li>
                 <nuxt-link to="../artikel">Blog</nuxt-link>
               </li>
-              <li>
-                <nuxt-link to="../jobs">Jobs</nuxt-link>
-              </li>
             </ul>
           </div>
         </div>
