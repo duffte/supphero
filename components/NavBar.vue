@@ -34,3 +34,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.navbar .is-primary {
+  background-color: #694be3;
+}
+</style>
+
