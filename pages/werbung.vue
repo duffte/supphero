@@ -7,7 +7,7 @@ w<template>
     <section class="section">
       <div class="container">
         <div class="columns">
-            <div class="column is-8 is-offset-2">
+            <div class="column is-8 is-offset-2" v-html="$md.render(content)">
                 test
             </div> 
         </div>
@@ -65,7 +65,20 @@ export default {
     return {
       title: 'Werben auf Supphero',
       image: 'https://supphero.netlify.com/_nuxt/img/368164f.svg',
-      description: 'So werben Sie auf Supphero'
+      description: 'So werben Sie auf Supphero',
+      content: ''
+    }
+  },
+  async asyncData({ app, params, error }) {
+    let content = await fireDb
+      .collection('page')
+      .doc(werbung)
+      .get()
+
+    if (content.data()) {
+      return {
+        content: content.data().content
+      }
     }
   }
 }
