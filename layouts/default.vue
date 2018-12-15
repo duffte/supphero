@@ -23,4 +23,25 @@ export default {
 a {
   color: #4f39a6;
 }
+section a {
+  color: #4f39a6;
+}
+.navbar.is-primary .navbar-start > a.navbar-item:hover {
+  background-color: #4f39a6 !important;
+}
+
+.has-text-primary {
+  color: #4f39a6 !important;
+}
+
+.navbar .nuxt-link-exact-active {
+  background-color: #4f39a6 !important;
+}
+
+.navbar.is-primary .navbar-brand > a.navbar-item:hover,
+.navbar.is-primary .navbar-brand > a.navbar-item.is-active,
+.navbar.is-primary .navbar-brand .navbar-link:hover,
+.navbar.is-primary .navbar-brand .navbar-link.is-active {
+  background-color: #4f39a6 !important;
+}
 </style>
