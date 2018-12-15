@@ -9,6 +9,10 @@ module.exports = {
   */
   head: {
     meta: [
+      htmlAttrs: {
+        lang: 'de',
+        amp: undefined // "amp" has no value
+      },
       // hid is used as unique identifier. Do not use `vmid` for it as it will not work
       {
         hid: 'description',
