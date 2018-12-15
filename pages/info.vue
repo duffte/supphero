@@ -7,7 +7,7 @@
     <section class="section">
       <div class="container">
         <div class="columns">
-            <div class="column is-8 is-offset-2">
+            <div class="column is-8 is-offset-2 content">
                 test
             </div> 
         </div>
@@ -65,7 +65,24 @@ export default {
     return {
       title: 'Supphero Info',
       image: 'https://supphero.netlify.com/_nuxt/img/368164f.svg',
-      description: 'Informationen über Supphero'
+      description: 'Infos über Supphero',
+      content: '',
+      subtitle: ''
+    }
+  },
+  async asyncData({ app, params, error }) {
+    let content = await fireDb
+      .collection('page')
+      .doc('info')
+      .get()
+
+    if (content.data()) {
+      return {
+        content: content.data().data.content,
+        title: content.data().data.pageTitle,
+        subtitle: content.data().data.pageSubtitle,
+        description: content.data().data.pageSubtitle
+      }
     }
   }
 }

@@ -66,18 +66,22 @@ export default {
       title: 'Datenschutz',
       image: 'https://supphero.netlify.com/_nuxt/img/368164f.svg',
       description: 'Datenschutz auf Supphero',
-      content: ''
+      content: '',
+      subtitle: ''
     }
   },
   async asyncData({ app, params, error }) {
     let content = await fireDb
       .collection('page')
-      .doc(datenschutz)
+      .doc('datenschutz')
       .get()
 
     if (content.data()) {
       return {
-        content: content.data().content
+        content: content.data().data.content,
+        title: content.data().data.pageTitle,
+        subtitle: content.data().data.pageSubtitle,
+        description: content.data().data.pageSubtitle
       }
     }
   }
