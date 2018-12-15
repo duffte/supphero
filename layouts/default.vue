@@ -18,7 +18,7 @@ export default {
 
 <style>
 .hero .is-primary {
-  background-color: #b8d900;
+  background-color: #4f39a6 !important;
 }
 a {
   color: #4f39a6;
