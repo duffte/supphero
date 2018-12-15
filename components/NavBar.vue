@@ -37,7 +37,7 @@ export default {
 
 <style>
 .navbar .is-primary {
-  background-color: #694be3;
+  background-color: #694be3 !important;
 }
 </style>
 
