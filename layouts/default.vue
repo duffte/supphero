@@ -15,3 +15,12 @@ export default {
   }
 }
 </script>
+
+<style>
+.hero .is-primary {
+  background-color: #b8d900;
+}
+a {
+  color: #4f39a6;
+}
+</style>
