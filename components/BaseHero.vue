@@ -1,7 +1,8 @@
 <template>
   <section class="hero is-medium is-primary">
-    <div class="container">
+    
       <div class="hero-body">
+        <div class="container">
         <div class="columns">
           <div class="column">                
             <img 

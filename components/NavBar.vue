@@ -35,7 +35,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .navbar.is-primary {
   background-color: #694be3 !important;
 }

@@ -19,13 +19,6 @@
           </a>
         </div>
       </div>
-      <span>Wirkungsgrad bei {{ symptom }}</span>
-      <progress
-        :value="wirkungsgrad"
-        max-attributes-per-line
-        class="progress is-primary"
-        max="10"
-      >{{ wirkungsgrad }}%</progress>
       <hr>
       <small>Einnahme</small>
       <p>
