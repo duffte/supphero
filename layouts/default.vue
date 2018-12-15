@@ -20,11 +20,15 @@ export default {
 .hero.is-primary {
   background-color: #4f39a6 !important;
 }
+.has-background-primary {
+  background-color: #4f39a6 !important;
+}
+
 a {
-  color: #4f39a6;
+  color: #694be3;
 }
 section a {
-  color: #4f39a6;
+  color: #694be3;
 }
 .navbar.is-primary .navbar-start > a.navbar-item:hover {
   background-color: #4f39a6 !important;
