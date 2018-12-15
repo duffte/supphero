@@ -1,8 +1,8 @@
-<template>
+w<template>
   <div>
     <BaseHero
-      title="Info"
-      subtitle="Das ist Supphero."
+      title="Werbung"
+      subtitle="Werben auf Supphero."
     />
     <section class="section">
       <div class="container">
@@ -60,12 +60,12 @@ export default {
       ]
     }
   },
-  name: 'Info',
+  name: 'Werbung',
   data() {
     return {
-      title: 'Supphero Info',
+      title: 'Werben auf Supphero',
       image: 'https://supphero.netlify.com/_nuxt/img/368164f.svg',
-      description: 'Informationen über Supphero'
+      description: 'So werben Sie auf Supphero'
     }
   }
 }

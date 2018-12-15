@@ -1,8 +1,8 @@
 <template>
   <div>
     <BaseHero
-      title="Info"
-      subtitle="Das ist Supphero."
+      title="Datenschutz"
+      subtitle=""
     />
     <section class="section">
       <div class="container">
@@ -60,12 +60,12 @@ export default {
       ]
     }
   },
-  name: 'Info',
+  name: 'Datenschutz',
   data() {
     return {
-      title: 'Supphero Info',
+      title: 'Datenschutz',
       image: 'https://supphero.netlify.com/_nuxt/img/368164f.svg',
-      description: 'Informationen über Supphero'
+      description: 'Datenschutz auf Supphero'
     }
   }
 }
