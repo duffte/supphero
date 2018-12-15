@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style>
-.hero .is-primary {
+.hero.is-primary {
   background-color: #4f39a6 !important;
 }
 a {
