@@ -6,8 +6,7 @@
     >
         <b-icon
         icon="amazon"
-        size="is-normal"/>
-                  
+        size="is-normal"/>                  
     </a>
 </template>
 
