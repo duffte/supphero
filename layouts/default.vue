@@ -17,6 +17,7 @@ export default {
 </script>
 
 <style>
+<<<<<<< HEAD
 body,
 h1,
 h2,
@@ -27,6 +28,8 @@ h6,
 p {
   font-family: 'Hind', sans-serif !important;
 }
+=======
+>>>>>>> 4d922a0639d42ada25c7c37200b4bf6d90cbc2f0
 .hero.is-primary {
   background-color: #4f39a6 !important;
 }
@@ -40,6 +43,7 @@ a {
 section a {
   color: #694be3;
 }
+<<<<<<< HEAD
 
 @media screen and (min-width: 1088px) {
   .navbar a {
@@ -69,5 +73,24 @@ section a {
 
 .has-text-primary {
   color: #4f39a6 !important;
+=======
+.navbar.is-primary .navbar-start > a.navbar-item:hover {
+  background-color: #4f39a6 !important;
+}
+
+.has-text-primary {
+  color: #4f39a6 !important;
+}
+
+.navbar .nuxt-link-exact-active {
+  background-color: #4f39a6 !important;
+}
+
+.navbar.is-primary .navbar-brand > a.navbar-item:hover,
+.navbar.is-primary .navbar-brand > a.navbar-item.is-active,
+.navbar.is-primary .navbar-brand .navbar-link:hover,
+.navbar.is-primary .navbar-brand .navbar-link.is-active {
+  background-color: #4f39a6 !important;
+>>>>>>> 4d922a0639d42ada25c7c37200b4bf6d90cbc2f0
 }
 </style>
