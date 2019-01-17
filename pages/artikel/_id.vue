@@ -20,7 +20,7 @@
                       icon="timer"
                       size="is-small"/> Lesedauer: {{ data.data.timeToRead }} Minute(n)</span>
                   <hr>
-                  <nuxt-link to="/autoren/">
+                  <nuxt-link to="/autoren/" title="Autoren">
                     <div class="author media">
                         <figure class="media-left">
                             <p class="image is-48x48">

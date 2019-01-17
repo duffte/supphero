@@ -2,6 +2,7 @@
     <a :href="'http://www.amazon.de/s/field-keywords='+keyword+'&tag=jul.supphero-21'" target="_blank"
     class="button amazon"
     :class="color"
+    title="Bei Amazon finden"
     >
         <b-icon
         icon="amazon"
