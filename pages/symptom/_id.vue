@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="symptom">
     <section class="section">
       <div class="container">
         <div class="columns">
@@ -31,6 +31,8 @@
               :wirkstofftyp="item.wirkstoff.wirkstoffTyp.wirkstofftypName"
               :wirkungsgrad="item.wirkstoff.wirkungsgrad"
               :symptom="symptom.data.symptomName"
+              :einnahmeempfehlung="item.empfehlung"
+              :allgemein="item.content"
             />
           </div>
         </div>
@@ -42,21 +44,6 @@
         <div class="columns">
           <div class="column is-8 is-offset-2">
             <div class="content">
-              <nuxt-link to="/autoren/">
-                <div class="author media">
-                  <figure class="media-left">
-                    <p class="image is-48x48">
-                      <img :src="symptom.data.autor.autorImage" class="is-rounded authorImage">
-                    </p>
-                  </figure>
-                  <div class="media-content">
-                    <div class="content">
-                      <span class="author-top">Geschrieben von</span>
-                      <p class="author-name">{{ symptom.data.autor.autorName }}</p>
-                    </div>
-                  </div>
-                </div>
-              </nuxt-link>
               <div v-for="item in symptom.blocks" :key="item.id" class="has-text-dark block">
                 <figure v-if="item.type == 'image'" class="figure column is-10 is-offset-1">
                   <img :src="item.src">
@@ -82,6 +69,30 @@
       </div>
     </section>
 
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-8 is-offset-2">            
+              <nuxt-link to="/autoren/">
+                <div class="author media">
+                  <figure class="media-left">
+                    <p class="image is-48x48">
+                      <img :src="symptom.data.autor.autorImage" class="is-rounded authorImage">
+                    </p>
+                  </figure>
+                  <div class="media-content">
+                    <div class="content">
+                      <span class="author-top">Geschrieben von</span>
+                      <p class="author-name">{{ symptom.data.autor.autorName }}</p>
+                    </div>
+                  </div>
+                </div>
+              </nuxt-link>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section has-background-primary">
       <div class="container">
         <div class="columns">
@@ -89,6 +100,7 @@
         </div>
       </div>
     </section>
+
   </div>
 </template>
 
@@ -99,38 +111,27 @@ export default {
   data() {
     return {
       isHinweisActive: true,
-      symptom: {},
+      symptom: null,
       artikel: [{ id: 1 }, { id: 2 }, { id: 3 }]
     }
   },
-  async asyncData({ app, params }) {
-    let artikelCollection = []
-
-    await fireDb
-      .collection('artikel')
-      .orderBy('data.artikelDate', 'desc')
-      .limit(3)
-      .get()
-      .then(querySnapshot => {
-        querySnapshot.forEach(doc => {
-          artikelCollection.push(doc.data().data)
-        })
-      })
-
+  async asyncData({ params }) {
     let symptom = await fireDb
       .collection('symptom')
       .doc(params.id)
       .get()
 
     return {
-      symptom: symptom.data(),
-      artikel: artikelCollection
+      symptom: symptom.data()
     }
   }
 }
 </script>
 
-<style>
+<style scoped>
+.box {
+  padding: 1.25rem 1.25rem 1.25rem 1.75rem;
+}
 .title-left {
   display: flex;
   align-items: flex-end;

@@ -1,14 +1,14 @@
-w<template>
+<template>
   <div>
     <BaseHero
-      title="Werbung"
-      subtitle="Werben auf nimdas.de"
+      title="Hilfe"
+      subtitle=""
     />
     <section class="section">
       <div class="container">
         <div class="columns">
             <div class="column is-8 is-offset-2 content" v-html="$md.render(content)">
-
+                test
             </div> 
         </div>
       </div>
@@ -60,12 +60,12 @@ export default {
       ]
     }
   },
-  name: 'Werbung',
+  name: 'Hilfe',
   data() {
     return {
-      title: 'Werben auf nimdas.de',
+      title: 'Hilfe',
       image: 'https://supphero.netlify.com/_nuxt/img/368164f.svg',
-      description: 'So werben Sie auf nimdas.de',
+      description: 'Wie benutze ich Supphero?',
       content: '',
       subtitle: ''
     }
@@ -73,7 +73,7 @@ export default {
   async asyncData({ app, params, error }) {
     let content = await fireDb
       .collection('page')
-      .doc('werbung')
+      .doc('hilfe')
       .get()
 
     if (content.data()) {

@@ -4,7 +4,7 @@
     <section class="section">
       <div class="container">
         <div class="columns">
-          <div class="column content">
+          <div class="content">
             <ul>
               <li v-for="wirkstoff in wirkstoffe" :key="wirkstoff.id">
                 <nuxt-link :to="'/wirkstoff/'+wirkstoff.id">

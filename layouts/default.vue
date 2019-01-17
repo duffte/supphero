@@ -15,3 +15,59 @@ export default {
   }
 }
 </script>
+
+<style>
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: 'Hind', sans-serif !important;
+}
+.hero.is-primary {
+  background-color: #4f39a6 !important;
+}
+.has-background-primary {
+  background-color: #4f39a6 !important;
+}
+
+a {
+  color: #694be3;
+}
+section a {
+  color: #694be3;
+}
+
+@media screen and (min-width: 1088px) {
+  .navbar a {
+    color: #fff !important;
+  }
+  .navbar.is-primary .navbar-start > a.navbar-item:hover {
+    background-color: #4f39a6 !important;
+  }
+  .navbar .nuxt-link-exact-active {
+    background-color: #4f39a6 !important;
+  }
+  .navbar.is-primary .navbar-brand > a.navbar-item:hover,
+  .navbar.is-primary .navbar-brand > a.navbar-item.is-active,
+  .navbar.is-primary .navbar-brand .navbar-link:hover,
+  .navbar.is-primary .navbar-brand .navbar-link.is-active {
+    background-color: #4f39a6 !important;
+  }
+}
+
+.navbar-brand a.navbar-item:hover {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.navbar-burger span {
+  color: #fff;
+}
+
+.has-text-primary {
+  color: #4f39a6 !important;
+}
+</style>

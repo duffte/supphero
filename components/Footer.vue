@@ -4,7 +4,7 @@
       <div class="container">
         <div class="columns">
           <div class="column">
-            <img src="~/assets/supphero_b.svg">
+            <img src="~/assets/logo_b.svg">
           </div>
           <div class="column">
             <ul>
@@ -32,9 +32,6 @@
               </li>
               <li>
                 <nuxt-link to="../artikel">Blog</nuxt-link>
-              </li>
-              <li>
-                <nuxt-link to="../jobs">Jobs</nuxt-link>
               </li>
             </ul>
           </div>

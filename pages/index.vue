@@ -1,20 +1,26 @@
 <template>
+<div>
+  <BaseHero title="Zeige mir die richtigen Supplemente für meine Ziele." subtitle=""/>
+
   <section class="section">
-    <div class="columns is-mobile">
-      <div class="column title-left">
-        <p class="title">Welches Supplement hilft bei</p>
-      </div>
-      <div class="column title-center has-text-left">
-        <ul>
-          <li v-for="symptom in symptome" :key="symptom.id">
-            <nuxt-link :to="'/symptom/'+symptom.id">
-              <p class="title has-text-primary">{{ symptom.symptomName }}</p>
-            </nuxt-link>
-          </li>
-        </ul>
+    <div class="container">
+      <div class="columns is-mobile">
+        <div class="column has-text-right">
+          <p class="title">Welches Supplement hilft bei</p>
+        </div>
+        <div class="column title-center has-text-left">
+          <ul>
+            <li v-for="symptom in symptome" :key="symptom.id">
+              <nuxt-link :to="'/symptom/'+symptom.id">
+                <p class="title has-text-primary">{{ symptom.symptomName }}</p>
+              </nuxt-link>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
+  </div>
 </template>
 
 <script>
@@ -58,7 +64,8 @@ export default {
       title: 'Supphero - Das passende Supplement für jedes Symptom',
       description:
         'Supphero erlaubt einfache Einsicht in die Wirkungsweisen von Supplementen bei typischen Symptomen.',
-      image: 'https://supphero.netlify.com/_nuxt/img/368164f.svg'
+      image:
+        'https://firebasestorage.googleapis.com/v0/b/supphero-4ce73.appspot.com/o/supphero.svg?alt=media&token=e18b0bd0-bb35-4839-b85c-f9223fd4a26a'
     }
   },
   async asyncData() {

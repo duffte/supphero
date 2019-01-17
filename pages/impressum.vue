@@ -1,13 +1,13 @@
 <template>
   <div>
     <BaseHero
-      title="Impressum"
-      subtitle=""
+      :title="title"
+      :subtitle="subtitle"
     />
     <section class="section">
       <div class="container">
         <div class="columns">
-            <div class="column is-8 is-offset-2" v-html="$md.render(content)">             
+            <div class="column is-8 is-offset-2 content" v-html="$md.render(content)">             
                 
             </div> 
         </div>
@@ -66,18 +66,22 @@ export default {
       title: 'Impressum',
       image: 'https://supphero.netlify.com/_nuxt/img/368164f.svg',
       description: 'Impressum von Supphero',
-      content: ''
+      content: '',
+      subtitle: ''
     }
   },
   async asyncData({ app, params, error }) {
     let content = await fireDb
       .collection('page')
-      .doc(impressum)
+      .doc('impressum')
       .get()
 
     if (content.data()) {
       return {
-        content: content.data().content
+        content: content.data().data.content,
+        title: content.data().data.pageTitle,
+        subtitle: content.data().data.pageSubtitle,
+        description: content.data().data.pageSubtitle
       }
     }
   }

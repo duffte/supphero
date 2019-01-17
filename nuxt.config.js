@@ -1,4 +1,4 @@
-import { fireDb } from './plugins/firebase.js'
+//import { fireDb } from './plugins/firebase.js'
 const pkg = require('./package')
 
 module.exports = {
@@ -8,11 +8,17 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    meta: [
+    meta: [{
       htmlAttrs: {
         lang: 'de',
         amp: undefined // "amp" has no value
-      },
+      }
+    }
+    ],
+    link: [
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700' },
+
+
       // hid is used as unique identifier. Do not use `vmid` for it as it will not work
       {
         hid: 'description',
@@ -79,7 +85,7 @@ module.exports = {
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',
     '@nuxtjs/markdownit',
-    '@nuxtjs/axios'
+    '@nuxtjs/pwa',
   ],
 
   /*

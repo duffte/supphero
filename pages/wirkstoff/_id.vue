@@ -1,15 +1,21 @@
 <template>
   <div>
-    <section class="section has-background-light">
+    <section class="section">
       <div class="container">
-        <div class="columns is-multiline">
+        <div class="columns">
           <div class="column is-8 is-offset-2">
-            <nuxt-link to="/wirkstoff" class="has-text-primary">
-              <small>Wirkstoff</small>
+            <nuxt-link to="/symptom" class="has-text-primary">
+              <small>Symptom</small>
             </nuxt-link>
             <h1 class="title is-1">{{ wirkstoff.data.wirkstoffName }}</h1>
             <p class="subtitle">{{ wirkstoff.data.wirkstoffKurzInfo }}</p>
           </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="columns">
           <div class="column is-8 is-offset-2">
             <div class="content">
               <div v-for="item in wirkstoff.blocks" :key="item.id" class="has-text-dark block">
@@ -24,7 +30,7 @@
                 />
               </div>
               <aside class="content">
-                <b-notification class="is-dark" :active.sync="isHinweisActive">
+                <b-notification :active.sync="isHinweisActive">
                   <i>
                     Wichtiger Hinweis:
                     Dieser Artikel enthält nur allgemeine Hinweise und sollte nicht zur Selbstdiagnose oder –behandlung verwendet werden. Er kann einen Arztbesuch nicht ersetzen. Die Beantwortung individueller Fragen durch unsere Experten ist leider nicht möglich.
@@ -36,6 +42,15 @@
         </div>
       </div>
     </section>
+
+    <section class="section has-background-primary">
+      <div class="container">
+        <div class="columns">
+          <BaseArticle v-for="item in artikel" :key="item.id" :author="item.autor" :image="item.artikelImage" :title="item.artikelName" :singleLink="'../../artikel/'+item.id"/>
+        </div>
+      </div>
+    </section>
+
   </div>
 </template>
 
@@ -46,7 +61,8 @@ export default {
   data() {
     return {
       isHinweisActive: true,
-      wirkstoff: {}
+      wirkstoff: {},
+      artikel: {}
     }
   },
   async asyncData({ app, params }) {
@@ -55,8 +71,22 @@ export default {
       .doc(params.id)
       .get()
 
+    let artikelCollection = []
+
+    await fireDb
+      .collection('artikel')
+      .orderBy('data.artikelDate', 'desc')
+      .limit(3)
+      .get()
+      .then(querySnapshot => {
+        querySnapshot.forEach(doc => {
+          artikelCollection.push(doc.data().data)
+        })
+      })
+
     return {
-      wirkstoff: wirkstoff.data()
+      wirkstoff: wirkstoff.data(),
+      artikel: artikelCollection
     }
   }
 }

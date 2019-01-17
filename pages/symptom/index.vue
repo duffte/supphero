@@ -4,7 +4,7 @@
     <section class="section">
       <div class="container">
         <div class="columns">
-          <div class="column content">
+          <div class="content">
             <ul>
               <li v-for="symptom in symptome" :key="symptom.id">
                 <nuxt-link :to="'/symptom/'+symptom.id">
