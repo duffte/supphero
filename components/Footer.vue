@@ -1,4 +1,4 @@
-<template>
+<template> 
   <footer class="has-background-light has-text-dark">
     <div class="section">
       <div class="container">
