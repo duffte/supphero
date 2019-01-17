@@ -15,13 +15,13 @@
             {{ timeToRead }} min Lesezeit
           </p>
           <p class="title is-4 newsTitle">
-            <nuxt-link :to="singleLink">{{ title }}</nuxt-link>
+            <nuxt-link :to="singleLink" :title="title">{{ title }}</nuxt-link>
           </p>
           <nuxt-link to="/autoren/">
             <div class="author media">
               <figure class="media-left">
                 <p class="image is-48x48">
-                  <img :src="author.autorImage" class="is-rounded authorImage">
+                  <img :src="author.autorImage" class="is-rounded authorImage" :alt="author.autorName">
                 </p>
               </figure>
               <div class="media-content">
