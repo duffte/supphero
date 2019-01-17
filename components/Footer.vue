@@ -4,7 +4,7 @@
       <div class="container">
         <div class="columns">
           <div class="column">
-            <img src="~/assets/logo_b.svg">
+            <img src="~/assets/logo_b.svg" alt="Logo">
           </div>
           <div class="column">
             <ul>
