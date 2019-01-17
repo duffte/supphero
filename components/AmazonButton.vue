@@ -3,6 +3,7 @@
     class="button amazon"
     :class="color"
     title="Bei Amazon finden"
+    rel="noopener"
     >
         <b-icon
         icon="amazon"
