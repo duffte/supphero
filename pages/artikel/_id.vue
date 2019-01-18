@@ -136,9 +136,9 @@ export default {
     return {
       data: null,
       related: null,
-      title: 'Datenschutz',
+      title: 'computed',
       image: 'https://supphero.netlify.com/_nuxt/img/368164f.svg',
-      description: 'Datenschutz auf Supphero',
+      description: 'computed',
       subtitle: ''
     }
   },
