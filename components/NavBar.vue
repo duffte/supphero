@@ -4,7 +4,7 @@
       <div class="navbar-brand">
         <router-link to="/" class="navbar-item">
         <no-ssr>
-          <img v-lazy="require('~/assets/logo.svg')" alt="Logo" width="112" height="28">
+          <img v-lazy="require('~/assets/logo.svg')" alt="Logo">
         </no-ssr>
         </router-link>
         <a
@@ -57,6 +57,7 @@ export default {
 }
 .navbar img {
   max-height: 50px;
+  width: 120px;
 }
 .navbar a {
   font-size: 18px;
