@@ -75,7 +75,13 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: ['~/plugins/global.js', '~/plugins/firebase.js', '~/plugins/md-it', { src: '~/plugins/lazyload', ssr: false }],
+  plugins: ['~/plugins/global.js',
+    '~/plugins/firebase.js',
+    '~/plugins/md-it',
+    '~/plugins/socialsharing.js',
+    { src: '~/plugins/lazyload', ssr: false },
+    { src: '~/plugins/VueFlickity.js', ssr: false }
+  ],
 
   /*
   ** Nuxt.js modules
