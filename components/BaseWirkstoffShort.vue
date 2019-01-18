@@ -2,28 +2,33 @@
   <article class="box is-relative">
     <div class="content">
       <div class="columns is-mobile">
-          <ImportanceBanner :color="bgcolor"/>
+          <ImportanceBanner :color="item.bgcolor"/>
         <div class="column">
-          <small>{{ wirkstofftyp }}</small>
+          <small>{{ item.wirkstoff.wirkstoffTyp.wirkstofftypName }}</small>
           <br>
-          <nuxt-link :to="'/wirkstoff/'+id" :title="'zum Wirkstoff '+ title">
-            <h3 class="title is-3" :class="textcolor" style="margin-bottom:0">{{ title }}</h3>
+          <nuxt-link :to="'/wirkstoff/'+item.id" :title="'zum Wirkstoff '+ item.wirkstoff.wirkstoffName">
+            <h3 class="title is-3" :class="item.textcolor" style="margin-bottom:0">{{ item.wirkstoff.wirkstoffName }}</h3>
           </nuxt-link>
         </div>
         <div class="column has-text-right">
-          <AmazonButton :keyword="title" :color="bgcolor"/>
+          <div class="button is-rounded has-background-primary" @click="addItem">
+            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+              <path fill="#ffffff" d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z" />
+            </svg>
+          </div>
+          <AmazonButton :keyword="item.wirkstoff.wirkstoffName" :color="item.bgcolor"/>
         </div>
       </div>
           
       <hr>       
           <h4><small>Einnahme</small></h4>
           <p>
-            {{ einnahmeempfehlung }}
+            {{ item.empfehlung }}
           </p>
         <hr/>
-           <h4><small>Darum {{ title }}</small></h4>
-          <p>{{ allgemein }}</p>
-    </div>
+           <h4><small>Darum {{ item.wirkstoff.wirkstoffName }}</small></h4>
+          <p>{{ item.content }}</p>
+        </div>
   </article>
 </template>
 
@@ -38,57 +43,24 @@ export default {
     ImportanceBanner
   },
   props: {
-    title: {
-      type: String,
-      default: 'Title'
-    },
-    asin: {
-      type: String,
-      default: 'B00AUPRP8K'
-    },
-    subtitle: {
-      type: String,
-      default: 'Subtitle'
-    },
-    info: {
-      type: String,
-      default: 'info'
-    },
-    id: {
-      type: String,
-      default: 'id'
-    },
-    wirkungsgrad: {
-      type: Number,
-      default: 10
-    },
-    wirkstofftyp: {
-      type: String,
-      default: 'Vitamin'
-    },
-    image: {
-      type: String,
-      default: null
-    },
-    symptom: {
-      type: String,
-      default: null
-    },
-    einnahmeempfehlung: {
-      type: String,
-      default: 'Täglich morgens 50mg'
-    },
-    allgemein: {
-      type: String,
-      default: 'content'
-    },
-    bgcolor: {
-      type: String,
-      default: 'has-background-info'
-    },
-    textcolor: {
-      type: String,
-      default: 'has-text-info'
+    item: {
+      type: Object,
+      default: () => {
+        return {
+          title: 'title',
+          asin: '12345',
+          subtitle: 'asd',
+          info: 'hehe',
+          id: '1',
+          wirkstofftyp: 'vitamin',
+          wirkungsgrad: 10
+        }
+      }
+    }
+  },
+  methods: {
+    addItem() {
+      this.$store.commit('addItem', this.item)
     }
   }
 }

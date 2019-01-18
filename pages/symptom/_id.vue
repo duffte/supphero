@@ -22,17 +22,7 @@
             <BaseWirkstoffShort
               v-for="item in symptom.wirkstoffe"
               :key="item.wirkstoff.id"
-              :image="item.wirkstoff.wirkstoffIcon"
-              :title="item.wirkstoff.wirkstoffName"
-              :subtitle="item.wirkstoff.wirkstoffTyp.wirkstoffTypName"
-              :info="item.content"
-              :wertung="item.wirkstoff.wirkstoffWertung"
-              :id="item.wirkstoff.id"
-              :wirkstofftyp="item.wirkstoff.wirkstoffTyp.wirkstofftypName"
-              :wirkungsgrad="item.wirkstoff.wirkungsgrad"
-              :symptom="symptom.data.symptomName"
-              :einnahmeempfehlung="item.empfehlung"
-              :allgemein="item.content"
+              :item="item"
             />
           </div>
         </div>
