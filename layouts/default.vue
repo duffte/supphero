@@ -17,16 +17,6 @@ export default {
 </script>
 
 <style>
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  font-family: 'Hind', sans-serif !important;
-}
 .hero.is-primary {
   background-color: #4f39a6 !important;
 }

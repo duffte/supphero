@@ -3,8 +3,7 @@
     <section class="section">
       <div class="container">
         <div class="columns">
-          <article>          
-
+          <article>        
             <header class="column is-12 content">  
               <div class="columns">
                 <div class="column is-6">
@@ -14,11 +13,7 @@
                   <p class="subtitle">
                     {{ data.data.artikelExcerpt }}
                   </p>
-                  <span><b-icon
-                    icon="calendar-range"
-                    size="is-small"/> {{ theDate }} <b-icon
-                      icon="timer"
-                      size="is-small"/> Lesedauer: {{ data.data.timeToRead }} Minute(n)</span>
+                  <span>icon {{ theDate }} icon Lesedauer: {{ data.data.timeToRead }} Minute(n)</span>
                   <hr>
                   <nuxt-link to="/autoren/" title="Autoren">
                     <div class="author media">
@@ -70,12 +65,10 @@
       </div>
     </section>
     <section 
-      :v-if="related" 
       class="section has-background-light">
-      <div class="container">
-        
+      <div class="container">        
         <div class="columns">
-             <BaseArticle v-for="item in artikel" :key="item.id" :author="item.autor" :image="item.artikelImage" :title="item.artikelName" :singleLink="'../artikel/'+item.id"/>
+             <BaseArticle v-if="item.id != $route.params.id" v-for="item in related" :key="item.id" :author="item.autor" :image="item.artikelImage" :title="item.artikelName" :singleLink="'../artikel/'+item.id"/>
         </div>
       </div>
     </section>
@@ -147,6 +140,7 @@ export default {
     var related = []
     let rel = await fireDb
       .collection('artikel')
+      .orderBy('data.artikelDate', 'desc')
       .limit(3)
       .get()
       .then(querySnapshot => {
