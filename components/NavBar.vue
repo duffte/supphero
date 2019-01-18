@@ -12,6 +12,7 @@
           role="button"
           class="navbar-burger burger"
           @click="showNav = !showNav"
+          aria-label="Menü"
         >
           <span aria-hidden="true"/>
           <span aria-hidden="true"/>

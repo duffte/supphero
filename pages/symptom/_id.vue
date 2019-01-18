@@ -77,7 +77,9 @@
                 <div class="author media">
                   <figure class="media-left">
                     <p class="image is-48x48">
-                      <img :src="symptom.data.autor.autorImage" class="is-rounded authorImage">
+                      <no-ssr>
+                        <img v-lazy="symptom.data.autor.autorImage" :alt="symptom.data.autor.autorName" class="is-rounded authorImage">
+                      </no-ssr>
                     </p>
                   </figure>
                   <div class="media-content">
