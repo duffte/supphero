@@ -11,7 +11,7 @@
                     <div class="author media">
               <figure class="media-left">
                   <p class="image is-128x128">
-                  <img :src="autor.autorImage" class="is-rounded authorImage">
+                  <img :src="autor.autorImage" class="is-rounded authorImage" :alt="autor.autorName">
                   </p>
               </figure>
               <div class="media-content">
