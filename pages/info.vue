@@ -2,7 +2,7 @@
   <div>
     <BaseHero
       title="Info"
-      subtitle="Das ist Supphero."
+      subtitle="Das ist nimdas.de"
     />
     <section class="section">
       <div class="container">
@@ -63,9 +63,9 @@ export default {
   name: 'Info',
   data() {
     return {
-      title: 'Supphero Info',
+      title: 'nimdas.de Info',
       image: 'https://supphero.netlify.com/_nuxt/img/368164f.svg',
-      description: 'Infos über Supphero',
+      description: 'Infos über nimdas.de',
       content: '',
       subtitle: ''
     }

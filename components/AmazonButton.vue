@@ -5,9 +5,7 @@
     title="Bei Amazon finden"
     rel="noopener"
     >
-        <b-icon
-        icon="amazon"
-        size="is-normal"/>                  
+        a                  
     </a>
 </template>
 

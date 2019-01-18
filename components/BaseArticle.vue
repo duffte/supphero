@@ -2,22 +2,22 @@
   <div :class="columnSize" class="column BaseNewsCard">
     <div class="card">
       <div class="card-image">
-        <nuxt-link :to="singleLink">
+        <nuxt-link :to="singleLink" :title="title">
           <figure class="newsImage image is-2by1">
             <img :src="image" :alt="title">
           </figure>
         </nuxt-link>
         <div class="card-content">
           <p class="subtitle is-6 has-text-grey">
-            <b-icon icon="calendar-range" size="is-small"/>
+            icon
             {{ thedate }}
-            <b-icon icon="timer" size="is-small"/>
+            icon
             {{ timeToRead }} min Lesezeit
           </p>
           <p class="title is-4 newsTitle">
             <nuxt-link :to="singleLink" :title="title">{{ title }}</nuxt-link>
           </p>
-          <nuxt-link to="/autoren/">
+          <nuxt-link to="/autoren/" :title="title">
             <div class="author media">
               <figure class="media-left">
                 <p class="image is-48x48">

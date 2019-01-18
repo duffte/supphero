@@ -83,7 +83,7 @@ module.exports = {
   modules: [
     ,
     // Doc: https://buefy.github.io/#/documentation
-    'nuxt-buefy',
+    '@nuxtjs/bulma',
     '@nuxtjs/markdownit',
     '@nuxtjs/pwa',
   ],
