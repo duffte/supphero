@@ -24,7 +24,7 @@
                     <div class="author media">
                         <figure class="media-left">
                             <p class="image is-48x48">
-                            <img :src="data.data.artikelAutor.autorImage" class="is-rounded authorImage">
+                            <img :src="data.data.artikelAutor.autorImage" :title="data.data.artikelAutor.autorName" class="is-rounded authorImage">
                             </p>
                         </figure>
                         <div class="media-content">
@@ -39,7 +39,8 @@
                 <div class="column is-6">
                   <img 
                     :src="data.data.artikelImage" 
-                    class="image">
+                    class="image"
+                    :alt="data.data.artikelName">
                 </div>
               </div>
             </header>
@@ -55,7 +56,7 @@
                 <figure 
                   v-if="item.type == 'image'" 
                   class="figure column is-10 is-offset-1">
-                  <img :src="item.src">
+                  <img :src="item.src" :alt="item.caption">
                   <figcaption>{{ item.caption }}</figcaption>
                 </figure>
                 <div 
