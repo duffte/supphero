@@ -121,8 +121,21 @@ export default {
       .doc(params.id)
       .get()
 
+    var related = []
+    let rel = await fireDb
+      .collection('artikel')
+      .orderBy('data.artikelDate', 'desc')
+      .limit(3)
+      .get()
+      .then(querySnapshot => {
+        querySnapshot.forEach(doc => {
+          related.push(doc.data().data)
+        })
+      })
+
     return {
-      symptom: symptom.data()
+      symptom: symptom.data(),
+      artikel: related
     }
   }
 }
