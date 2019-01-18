@@ -1,7 +1,15 @@
 <template>
 <div>
   <BaseHero title="Zeige mir die richtigen Supplemente für meine Ziele." subtitle=""/>
-
+  <section class="section">
+    <div class="container">
+      <no-ssr>
+      <flickity class="flickity" ref="flickity" :options="flickityOptions">
+        <FrontpageCard v-for="item in symptome" :key="item.id" :text="item.symptomName"/>
+      </flickity>
+      </no-ssr>
+    </div>
+  </section>
   <section class="section">
     <div class="container">
       <div class="columns is-mobile">
@@ -24,8 +32,10 @@
 </template>
 
 <script>
+import FrontpageCard from '@/components/FrontpageCard'
 import { fireDb } from '~/plugins/firebase.js'
 export default {
+  components: { FrontpageCard },
   head() {
     return {
       title: this.title,
@@ -60,10 +70,19 @@ export default {
   name: 'HomePage',
   data() {
     return {
+      flickityOptions: {
+        initialIndex: 1,
+        prevNextButtons: false,
+        pageDots: false,
+        contain: true,
+        freeScroll: true,
+        autoPlay: 2500,
+        pauseAutoPlayOnHover: true
+      },
       symptome: [],
-      title: 'Supphero - Das passende Supplement für jedes Symptom',
+      title: 'nimdas.de - Das passende Supplement für jedes Symptom',
       description:
-        'Supphero erlaubt einfache Einsicht in die Wirkungsweisen von Supplementen bei typischen Symptomen.',
+        'nimdas.de erlaubt einfache Einsicht in die Wirkungsweisen von Supplementen bei typischen Symptomen.',
       image:
         'https://firebasestorage.googleapis.com/v0/b/supphero-4ce73.appspot.com/o/supphero.svg?alt=media&token=e18b0bd0-bb35-4839-b85c-f9223fd4a26a'
     }
@@ -87,5 +106,10 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.flickity {
+  margin-left: -15%;
+  margin-right: -15%;
+  margin-top: -15%;
+}
 </style>

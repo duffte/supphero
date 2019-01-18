@@ -2,16 +2,16 @@
   <div>
     <NavBar/>
     <nuxt/>
+    <SocialSharing/>
     <Footer/>
   </div>
 </template>
 
 <script>
+import SocialSharing from '@/components/SocialSharing'
 export default {
-  data() {
-    return {
-      items: [{ title: 'Home', icon: 'home', to: { name: 'index' } }]
-    }
+  components: {
+    SocialSharing
   }
 }
 </script>

@@ -22,9 +22,11 @@
     "firebase": "^5.5.8",
     "nuxt": "^2.0.0",
     "nuxt-buefy": "^0.2.1",
+    "vue-flickity": "^1.1.2",
     "vue-lazyload": "^1.2.6",
     "vue-markdown": "^2.2.4",
-    "vue-simplemde": "^0.4.9"
+    "vue-simplemde": "^0.4.9",
+    "vue-social-sharing": "^2.3.3"
   },
   "devDependencies": {
     "nodemon": "^1.11.0",
