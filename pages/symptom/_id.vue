@@ -46,12 +46,12 @@
                 />
               </div>
               <aside class="content">
-                <b-notification :active.sync="isHinweisActive">
+                <div :active.sync="isHinweisActive" class="notification">
                   <i>
                     Wichtiger Hinweis:
                     Dieser Artikel enthält nur allgemeine Hinweise und sollte nicht zur Selbstdiagnose oder –behandlung verwendet werden. Er kann einen Arztbesuch nicht ersetzen. Die Beantwortung individueller Fragen durch unsere Experten ist leider nicht möglich.
                   </i>
-                </b-notification>
+                </div>
               </aside>
             </div>
           </div>
