@@ -3,7 +3,9 @@
     <div class="container">
       <div class="navbar-brand">
         <router-link to="/" class="navbar-item">
-          <img src="~assets/logo.svg" alt="Logo" width="112" height="28">
+        <no-ssr>
+          <img v-lazy="require('~/assets/logo.svg')" alt="Logo" width="112" height="28">
+        </no-ssr>
         </router-link>
         <a
           :class="{ 'is-active': showNav }"

@@ -4,7 +4,9 @@
       <div class="container">
         <div class="columns">
           <div class="column">
-            <img src="~/assets/logo_b.svg" alt="Logo">
+            <no-ssr>
+              <img v-lazy="require('~/assets/logo_b.svg')" alt="Logo">
+            </no-ssr>
           </div>
           <div class="column">
             <ul>
@@ -42,7 +44,13 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      image: '~/assets/logo_b.svg'
+    }
+  }
+}
 </script>
 
 <style>

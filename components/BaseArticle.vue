@@ -4,7 +4,9 @@
       <div class="card-image">
         <nuxt-link :to="singleLink" :title="title">
           <figure class="newsImage image is-2by1">
-            <img :src="image" :alt="title">
+            <no-ssr>
+            <img v-lazy="image" :alt="title">
+            </no-ssr>
           </figure>
         </nuxt-link>
         <div class="card-content">
@@ -21,7 +23,9 @@
             <div class="author media">
               <figure class="media-left">
                 <p class="image is-48x48">
-                  <img :src="author.autorImage" class="is-rounded authorImage" :alt="author.autorName">
+                  <no-ssr>            
+                    <img v-lazy="author.autorImage" class="is-rounded authorImage" :alt="author.autorName">
+                  </no-ssr>
                 </p>
               </figure>
               <div class="media-content">

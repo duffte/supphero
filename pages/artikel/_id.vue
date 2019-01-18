@@ -19,7 +19,9 @@
                     <div class="author media">
                         <figure class="media-left">
                             <p class="image is-48x48">
-                            <img :src="data.data.artikelAutor.autorImage" :title="data.data.artikelAutor.autorName" class="is-rounded authorImage">
+                              <no-ssr>
+                                <img v-lazy="data.data.artikelAutor.autorImage" :title="data.data.artikelAutor.autorName" class="is-rounded authorImage">
+                              </no-ssr>
                             </p>
                         </figure>
                         <div class="media-content">
@@ -51,7 +53,9 @@
                 <figure 
                   v-if="item.type == 'image'" 
                   class="figure column is-10 is-offset-1">
-                  <img :src="item.src" :alt="item.caption">
+                  <no-ssr>
+                    <img v-lazy="item.src" :alt="item.caption">
+                  </no-ssr>
                   <figcaption>{{ item.caption }}</figcaption>
                 </figure>
                 <div 
