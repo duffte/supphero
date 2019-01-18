@@ -13,6 +13,10 @@ const createStore = () => {
             clearCartContents: state => {
                 state.cart = {};
             },
+            deleteItem: (state, item) => {
+                state.cartTotal = state.cartTotal - 1;
+                delete state.cart[item.wirkstoff.id]
+            },
             addItem: (state, item) => {
                 if (item.wirkstoff.id in state.cart) {
                 } else {

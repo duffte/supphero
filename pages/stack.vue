@@ -13,11 +13,12 @@
                         v-for="item in cart"
                         key="item">
                         <div class="carttext">
-                        <h4>{{ item.wirkstoff.wirkstoffName }}</h4>
-                        <p> {{ item.wirkstoffKurzInfo }}</p>
-                        <p> <strong> 30mg/Tag </strong></p>
+                            <h4>{{ item.wirkstoff.wirkstoffName }}</h4>
+                            <p> {{ item.wirkstoffKurzInfo }}</p>
+                            <p> <strong> 30mg/Tag </strong></p>
                         </div>
                         <img class="cartimg" :src="`/${item.symptomImage}`" :alt="`Image of ${item.symptomName}`">
+                        <button @click="deleteItem(item)">x</button>
                     </div>                
                 </div>
 
@@ -43,6 +44,11 @@ export default {
     },
     cartTotal() {
       return this.$store.state.cartTotal
+    }
+  },
+  methods: {
+    deleteItem(item) {
+      this.$store.commit('deleteItem', item)
     }
   }
 }
