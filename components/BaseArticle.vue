@@ -23,23 +23,7 @@
           <p class="title is-4 newsTitle">
             <nuxt-link :to="singleLink" :title="title">{{ title }}</nuxt-link>
           </p>
-          <nuxt-link to="/autoren/" :title="title">
-            <div class="author media">
-              <figure class="media-left">
-                <p class="image is-48x48">
-                  <no-ssr>            
-                    <img v-lazy="author.autorImage" class="is-rounded authorImage" :alt="author.autorName">
-                  </no-ssr>
-                </p>
-              </figure>
-              <div class="media-content">
-                <div class="content">
-                  <span class="author-top">Geschrieben von</span>
-                  <p class="author-name">{{ author.autorName }}</p>
-                </div>
-              </div>
-            </div>
-          </nuxt-link>
+          
         </div>
       </div>
     </div>
