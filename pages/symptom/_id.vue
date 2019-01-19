@@ -29,7 +29,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" v-if="symptom.blocks.length > 0">
       <div class="container">
         <div class="columns">
           <div class="column is-8 is-offset-2">
@@ -59,27 +59,34 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" v-if="symptom.faq.length > 0">
       <div class="container">
         <div class="columns">
-          <div class="column is-8 is-offset-2">            
-              <nuxt-link to="/autoren/" title="Autoren">
-                <div class="author media">
-                  <figure class="media-left">
-                    <p class="image is-48x48">
-                      <no-ssr>
-                        <img v-lazy="symptom.data.autor.autorImage" :alt="symptom.data.autor.autorName" class="is-rounded authorImage">
-                      </no-ssr>
-                    </p>
-                  </figure>
-                  <div class="media-content">
-                    <div class="content">
-                      <span class="author-top">Geschrieben von</span>
-                      <p class="author-name">{{ symptom.data.autor.autorName }}</p>
-                    </div>
-                  </div>
-                </div>
-              </nuxt-link>
+          <div class="column is-8 is-offset-2">
+            <h2 class="title is-6">FAQ:</h2>
+            <ul class="faq">
+            <li class="faq-item"
+              v-for="(item, index) in symptom.faq"
+              :key="index"
+              :item="item"
+            >
+            <h4 class="title is-5">{{item.title}}</h4>
+            <div v-html="$md.render(item.content)"/>
+            </li>
+            </ul>
+          </div>
+        </div>        
+      </div>
+    </section>
+
+    <section class="section content" v-if="symptom.data.symptomAssembleStack">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-8 is-offset-2">
+            <h2 class="title is-6">Informationen zur Einnahme:</h2>
+            <div v-html="$md.render(symptom.data.symptomAssembleStack)"/>
+            </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -134,6 +141,9 @@ export default {
 </script>
 
 <style scoped>
+ul li {
+  margin-bottom: 2em;
+}
 .box {
   padding: 1.25rem 1.25rem 1.25rem 1.75rem;
 }

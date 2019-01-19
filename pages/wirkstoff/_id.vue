@@ -13,7 +13,31 @@
         </div>
       </div>
     </section>
-    <section class="section">
+    
+
+    <section class="section has-background-light">
+      <div class="container">        
+        <div class="columns">        
+          <div class="column is-8 is-offset-2">
+            <h2 class="title is-6">{{ wirkstoff.data.wirkstoffName }} hilft bei diesen Symptomen:</h2>
+              
+          <div v-for="item in wirkstoff.mentions">
+            
+              <nuxt-link :to="'../symptom/'+item.id">
+                <div class="box">
+                  <h3 class="title is-4">{{item.name}}</h3>
+                  
+                  <p>{{item.content}}</p>
+                </div>
+            </nuxt-link>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    
+    <section class="section" v-if="wirkstoff.blocks.length > 0">
       <div class="container">
         <div class="columns">
           <div class="column is-8 is-offset-2">
@@ -29,14 +53,6 @@
                   v-html="$md.render(item.content)"
                 />
               </div>
-              <aside class="content">
-                <b-notification :active.sync="isHinweisActive">
-                  <i>
-                    Wichtiger Hinweis:
-                    Dieser Artikel enthält nur allgemeine Hinweise und sollte nicht zur Selbstdiagnose oder –behandlung verwendet werden. Er kann einen Arztbesuch nicht ersetzen. Die Beantwortung individueller Fragen durch unsere Experten ist leider nicht möglich.
-                  </i>
-                </b-notification>
-              </aside>
             </div>
           </div>
         </div>
@@ -92,7 +108,10 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.box {
+  margin-bottom: 1em;
+}
 .title-left {
   display: flex;
   align-items: flex-end;

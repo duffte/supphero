@@ -1,5 +1,5 @@
 <template>
-    <div class="ribbon" :class="color">
+    <div class="ribbon" :style="bgcolor">
     </div>
 </template>
 
@@ -12,8 +12,14 @@ export default {
     }
   },
   computed: {
-    style: function() {
-      return 'background-color:' + this.color + '!important'
+    bgcolor: function() {
+      if (this.color == 'primary') {
+        return 'background-color: #58c85c !important'
+      } else if (this.color == 'secondary') {
+        return 'background-color: #c3da1d !important'
+      } else {
+        return 'background-color: #a29b85 !important'
+      }
     }
   }
 }
