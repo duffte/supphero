@@ -1,6 +1,7 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 import 'firebase/storage'
+import 'firebase/auth'
 
 if (!firebase.apps.length) {
   const config = {
@@ -12,10 +13,13 @@ if (!firebase.apps.length) {
     messagingSenderId: '800464300796'
   }
   firebase.initializeApp(config)
-  firebase.firestore().settings({ timestampsInSnapshots: true })
+  const settings = {/* your settings... */ timestampsInSnapshots: true };
+  firebase.firestore().settings(settings)
+
 }
 const fireDb = firebase.firestore()
 const storage = firebase.storage()
-const app = firebase
+const fireauth = firebase.auth()
 
-export { storage, fireDb, app }
+export { storage, fireDb, fireauth }
+export default firebase

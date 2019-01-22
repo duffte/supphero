@@ -1,12 +1,16 @@
 import Vuex from 'vuex';
-
+import firebase, { fireauth } from '@/plugins/firebase.js'
 const createStore = () => {
     return new Vuex.Store({
         state: {
             cartTotal: 0,
-            cart: {}
+            cart: {},
+            user: null
         },
         mutations: {
+            setUser(state, payload) {
+                state.user = payload
+            },
             clearCartCount: state => {
                 state.cartTotal = 0;
             },
@@ -25,6 +29,30 @@ const createStore = () => {
                     stateItem.count = 1;
                     state.cart[item.wirkstoff.id] = stateItem;
                 }
+            }
+        },
+        getters: {
+            activeUser: (state, getters) => {
+                return state.user
+            }
+        },
+        actions: {
+            signInWithGoogle({ commit }) {
+                return new Promise((resolve, reject) => {
+                    fireauth.signInWithRedirect(new firebase.auth.GoogleAuthProvider())
+                    resolve()
+                })
+            },
+            signInWithFacebook({ commit }) {
+                return new Promise((resolve, reject) => {
+                    fireauth.signInWithRedirect(new firebase.auth.FacebookAuthProvider())
+                    resolve()
+                })
+            },
+            signOut({ commit }) {
+                fireauth.signOut().then(() => {
+                    commit('setUser', null)
+                }).catch(err => console.log(error))
             }
         }
     });

@@ -79,6 +79,7 @@ module.exports = {
     '~/plugins/firebase.js',
     '~/plugins/md-it',
     '~/plugins/socialsharing.js',
+    { src: '~/plugins/fireauth.js', ssr: false },
     { src: '~/plugins/lazyload', ssr: false },
     { src: '~/plugins/VueFlickity.js', ssr: false }
   ],
@@ -87,7 +88,6 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    ,
     // Doc: https://buefy.github.io/#/documentation
     '@nuxtjs/bulma',
     '@nuxtjs/markdownit',
