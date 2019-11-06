@@ -4,7 +4,7 @@
       <div class="navbar-brand">
         <router-link to="/" class="navbar-item">
         <no-ssr>
-          <img v-lazy="require('~/assets/logo.svg')" alt="Logo">
+          <img class="logo" v-lazy="require('~/assets/logo.svg')" alt="Logo">
         </no-ssr>
         </router-link>
         <a
@@ -55,16 +55,35 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+.logo {
+  height: 1.75em;
+}
 .navbar.is-primary {
-  background-color: #694be3 !important;
+  background-color: #fff !important;
 }
-.navbar img {
-  max-height: 50px;
-  width: 120px;
+.navbar.is-primary .navbar-brand > a.navbar-item:hover,
+.navbar.is-primary .navbar-brand > a.navbar-item.is-active,
+.navbar.is-primary .navbar-brand .navbar-link:hover,
+.navbar.is-primary .navbar-brand .navbar-link.is-active {
+  background-color: #fff !important;
 }
-.navbar a {
-  font-size: 18px;
+.navbar.is-primary .navbar-start > a.navbar-item:hover,
+.navbar.is-primary .navbar-start > a.navbar-item.is-active,
+.navbar.is-primary .navbar-start .navbar-link:hover,
+.navbar.is-primary .navbar-start .navbar-link.is-active,
+.navbar.is-primary .navbar-end > a.navbar-item:hover,
+.navbar.is-primary .navbar-end > a.navbar-item.is-active,
+.navbar.is-primary .navbar-end .navbar-link:hover,
+.navbar.is-primary .navbar-end .navbar-link.is-active {
+  background-color: transparent !important;
+  color: #fff;
+}
+.navbar-burger span {
+  background-color: #fff !important;
+}
+.hero.is-primary {
+  background-color: #fff;
 }
 </style>
 

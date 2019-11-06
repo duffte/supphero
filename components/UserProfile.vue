@@ -1,10 +1,9 @@
 <template>  
   <nuxt-link class="navbar-item" v-if="this.$store.state.user" to="../account">
     <figure class="image is-24x24">
-      <img :src="this.$store.state.user.photoURL">
+      <img class="is-rounded" :src="this.$store.state.user.photoURL">
     </figure>
     
-    <span class="has-text-white">{{ user.displayName }}</span>
     <button @click="logout" class="button is-danger">
       Logout
     </button>      
@@ -17,6 +16,7 @@
 </template>
 
 <script>
+import { fireauth } from '@/plugins/firebase'
 export default {
   data() {
     return {
@@ -30,8 +30,9 @@ export default {
   },
   methods: {
     logout() {
-      this.$store.dispatch('signOut').then(() => {
+      fireauth.signOut().then(() => {
         this.$router.push('/')
+        this.$store.commit('setUser', null)
       })
     }
   }

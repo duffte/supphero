@@ -5,6 +5,7 @@ import BaseHero from '~/components/BaseHero.vue'
 import BaseWirkstoffShort from '~/components/BaseWirkstoffShort.vue'
 import BaseArticle from '~/components/BaseArticle.vue'
 
+
 Vue.component('BaseHero', BaseHero)
 Vue.component('BaseWirkstoffShort', BaseWirkstoffShort)
 Vue.component('NavBar', NavBar)

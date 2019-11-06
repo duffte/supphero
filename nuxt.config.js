@@ -1,4 +1,4 @@
-import { fireDb } from './plugins/firebase.js'
+//import { fireDb } from './plugins/firebase.js'
 const pkg = require('./package')
 
 module.exports = {
@@ -91,7 +91,7 @@ module.exports = {
     // Doc: https://buefy.github.io/#/documentation
     '@nuxtjs/bulma',
     '@nuxtjs/markdownit',
-    '@nuxtjs/pwa',
+    '@nuxtjs/pwa'
   ],
 
   /*

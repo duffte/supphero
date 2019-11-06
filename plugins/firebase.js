@@ -13,8 +13,6 @@ if (!firebase.apps.length) {
     messagingSenderId: '800464300796'
   }
   firebase.initializeApp(config)
-  const settings = {/* your settings... */ timestampsInSnapshots: true };
-  firebase.firestore().settings(settings)
 
 }
 const fireDb = firebase.firestore()

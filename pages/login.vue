@@ -39,7 +39,7 @@
 </template>
 
  <script>
-import { fireauth } from '@/plugins/firebase.js'
+import firebase, { fireauth } from '@/plugins/firebase.js'
 export default {
   name: 'Login',
   data() {
@@ -55,9 +55,6 @@ export default {
     googleSignUp() {
       this.$store
         .dispatch('signInWithGoogle')
-        .then(() => {
-          this.isLoading = true
-        })
         .then(() => {
           console.log('inside then statement on login')
         })

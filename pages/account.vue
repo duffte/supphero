@@ -1,5 +1,5 @@
 <template>
-<div v-if="$store.state.user">
+<div>
     <BaseHero
         :title="'Hallo, '+$store.state.user.displayName"
         subtitle=""
@@ -91,6 +91,3 @@ export default {
   }
 }
 </script>
-
-<style>
-</style>
